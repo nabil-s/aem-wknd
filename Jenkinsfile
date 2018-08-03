@@ -6,7 +6,7 @@ node {
         }
         stage('Scan') {
             echo 'Scanning...'
-            sh 'mvn -X -DskipTests clean install sonar:sonar'
+            sh 'mvn -X -DskipTests -f pom.xml clean install sonar:sonar'
         }
         stage('Test') {
             echo 'Testing...'
